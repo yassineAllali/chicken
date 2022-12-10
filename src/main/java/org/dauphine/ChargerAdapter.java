@@ -1,7 +1,6 @@
 package org.dauphine;
 
 import org.example.CoffeeMachine;
-import org.example.Machine;
 
 import java.util.Random;
 
@@ -15,8 +14,7 @@ public class ChargerAdapter implements Charger {
     private DrinkType drinkType;
 
     public ChargerAdapter() {
-        Machine machine = new Machine();
-        coffeeMachine = new CoffeeMachine(5000, 5000, 5000, 5000, machine);
+        coffeeMachine = CoffeeMachineFactory.getFullCoffeeMachine();
     }
 
     @Override
