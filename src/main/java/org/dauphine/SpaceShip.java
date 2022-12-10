@@ -1,17 +1,23 @@
 package org.dauphine;
 
-public class SpaceShip {
+public class SpaceShip implements Chargeable{
 
     private int x;
     private int y;
+    private int energy;
 
     public SpaceShip() {
         this(0, 0);
     }
 
     public SpaceShip(int x, int y) {
+        this(x, y, 0);
+    }
+
+    public SpaceShip(int x, int y, int energy) {
         this.x = x;
         this.y = y;
+        this.energy = energy;
     }
 
     public int getX() {
@@ -47,8 +53,21 @@ public class SpaceShip {
     }
 
     public void shoot(Chicken chicken) {
-        if(x == chicken.getX() && y < chicken.getY()) {
-            chicken.setAlive(false);
+        if(energy > 0) {
+            if(x == chicken.getX() && y < chicken.getY()) {
+                chicken.setAlive(false);
+            }
+            energy--;
         }
+    }
+
+    @Override
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    @Override
+    public int getEnergy() {
+        return energy;
     }
 }

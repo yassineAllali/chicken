@@ -16,6 +16,7 @@ public class ShootingStepdefs {
     @Given("spaceShip à la position \\({int}, {int}) [shoot]")
     public void initializeSpaceship(int x, int y) {
         spaceShip = new SpaceShip(x, y);
+        spaceShip.setEnergy(10);
     }
 
     @Given("Chicken à la position \\({int}, {int})")
