@@ -42,5 +42,5 @@ Feature: Spaceship movement
     Examples:
       | Spaceship | x | y | d | n_x | n_y |
       | spaceShip | 0 | 0 | 3 | 0   | -3  |
-      | spaceShip | 1 | 2 | 7 | 1   | -9  |
+      | spaceShip | 1 | 2 | 7 | 1   | -5  |
 
